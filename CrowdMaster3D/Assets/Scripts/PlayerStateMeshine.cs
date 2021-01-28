@@ -23,7 +23,7 @@ public class PlayerStateMeshine : MonoBehaviour
     }
     private void Update()
     {
-        if (currentState != null)
+        if (currentState == null)
             return;
 
         PlayerState nextState = currentState.GetNextState();
