@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Animation))]
-public class PlayerStateMeshine : MonoBehaviour
+public class PlayerStateMashine : MonoBehaviour
 {
     [SerializeField] private PlayerState firstState;
 
