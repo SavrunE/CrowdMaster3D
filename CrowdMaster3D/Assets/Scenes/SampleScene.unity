@@ -817,6 +817,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329338866}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &437170159 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2353139115723093414, guid: b4ac742c35073874380b2544197ba017, type: 3}
+  m_PrefabInstance: {fileID: 8948415603890992996}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &437170160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437170159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52bb78fb7d656dc45972e85f6555780b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accumulationTime: 1.5
+--- !u!114 &437170161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437170159}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8984143eecd6a24ba441c1723edd00e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetState: {fileID: 0}
 --- !u!1 &490769032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2931,6 +2962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LowpolyNinja
       objectReference: {fileID: 0}
+    - target: {fileID: 8948415604659139765, guid: b4ac742c35073874380b2544197ba017, type: 3}
+      propertyPath: staminaAccumulator
+      value: 
+      objectReference: {fileID: 437170160}
     - target: {fileID: 8948415604659139766, guid: b4ac742c35073874380b2544197ba017, type: 3}
       propertyPath: m_Enabled
       value: 0
