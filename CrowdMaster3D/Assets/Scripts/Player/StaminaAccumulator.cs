@@ -22,7 +22,7 @@ public class StaminaAccumulator : MonoBehaviour
     {
         if (staminaValue > accumulationTime)
         {
-            Debug.Log("Ultimate ");
+            Debug.Log("Ultimate");
         }
         Debug.Log("Attack");
     }
