@@ -5,6 +5,8 @@ using UnityEngine;
 public class StaminaAccumulator : MonoBehaviour
 {
     [SerializeField] private float accumulationTime;
+    [SerializeField] private Ability ability;
+    [SerializeField] private Ability ultimateAbility;
 
     private float staminaValue;
 
@@ -18,12 +20,12 @@ public class StaminaAccumulator : MonoBehaviour
         staminaValue += Time.deltaTime;
     }
 
-    public void GetAbility()
+    public Ability GetAbility()
     {
         if (staminaValue > accumulationTime)
         {
-            Debug.Log("Ultimate");
+            return ultimateAbility;
         }
-        Debug.Log("Attack");
+        return ability;
     }
 }

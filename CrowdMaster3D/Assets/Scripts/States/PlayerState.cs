@@ -6,7 +6,7 @@ public abstract class PlayerState : MonoBehaviour
 {
     [SerializeReference] private PlayerTransition[] transitins;
 
-    protected Rigidbody Body { get; private set; }
+    public Rigidbody Body { get; private set; }
     protected Animator Animator { get; private set; }
 
     public void Enter(Rigidbody body, Animator animator)
