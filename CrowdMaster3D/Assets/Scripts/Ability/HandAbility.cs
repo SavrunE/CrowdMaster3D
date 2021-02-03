@@ -8,9 +8,11 @@ public class HandAbility : Ability
     [SerializeField] private float attackForce;
     [SerializeField] private float usefulTime;
 
+    [Range(2f,5f)]
+    [SerializeField] private float slowerSpeedOnWrongAttack = 2f;
+
     private AttackState attackState;
     private Coroutine coroutine;
-
 
     public override event Action AbilityEnded;
 
@@ -23,11 +25,15 @@ public class HandAbility : Ability
 
         attackState = attack;
 
+        coroutine = attackState.StartCoroutine(Attack(attackState));
         attackState.CollisionDetected += OnPlayerAttack;
     }
 
-    private void OnPlayerAttack()
+    private void OnPlayerAttack(IDamageable damageable)
     {
+        if (damageable.ApplyDamage(attackState.Body, attackForce) == false)
+            return;
+        attackState.Body.velocity /= slowerSpeedOnWrongAttack;
     }
     private IEnumerator Attack(AttackState attackState)
     {

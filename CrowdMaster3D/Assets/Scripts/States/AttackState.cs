@@ -9,11 +9,30 @@ public class AttackState : PlayerState
 
     private Ability currentAbility;
 
-    public event Action CollisionDetected;
+    public event Action<IDamageable> CollisionDetected;
     public event Action AbilityEnded;
 
     private void OnEnable()
     {
         currentAbility = staminaAccumulator.GetAbility();
+        currentAbility.AbilityEnded += OnAbilityEnded;
+
+        currentAbility.UseAbility(this);
+    }
+
+    private void OnDisable()
+    {
+
+        currentAbility.AbilityEnded -= OnAbilityEnded;
+    }
+
+    private void OnAbilityEnded()
+    {
+        AbilityEnded?.Invoke();
+    }
+
+    private void Update()
+    {
+        
     }
 }
