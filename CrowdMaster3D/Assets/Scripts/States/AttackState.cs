@@ -31,6 +31,22 @@ public class AttackState : PlayerState
         AbilityEnded?.Invoke();
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out IDamageable damageable))
+        {
+            CollisionDetected?.Invoke(damageable);
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent(out IDamageable damageable))
+        {
+            CollisionDetected?.Invoke(damageable);
+        }
+    }
+
     private void Update()
     {
         

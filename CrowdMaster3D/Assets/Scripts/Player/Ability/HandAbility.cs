@@ -3,13 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Hand Ability", menuName = "Player/Abilities/Hand" , order = 51)]
 public class HandAbility : Ability
 {
     [SerializeField] private float attackForce;
     [SerializeField] private float usefulTime;
 
     [Range(2f,5f)]
-    [SerializeField] private float slowerSpeedOnWrongAttack = 2f;
+    [SerializeField] private float onWrongAttackSlower = 2f;
 
     private AttackState attackState;
     private Coroutine coroutine;
@@ -33,7 +34,7 @@ public class HandAbility : Ability
     {
         if (damageable.ApplyDamage(attackState.Body, attackForce) == false)
             return;
-        attackState.Body.velocity /= slowerSpeedOnWrongAttack;
+        attackState.Body.velocity /= onWrongAttackSlower;
     }
     private IEnumerator Attack(AttackState attackState)
     {
