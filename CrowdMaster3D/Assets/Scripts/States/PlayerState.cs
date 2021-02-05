@@ -40,7 +40,10 @@ public abstract class PlayerState : MonoBehaviour
     {
         foreach (var transition in transitins)
         {
-            return transition.TargetState;
+            if (transition.NeedTransit)
+            {
+                return transition.TargetState;
+            }
         }
         return null;
     }

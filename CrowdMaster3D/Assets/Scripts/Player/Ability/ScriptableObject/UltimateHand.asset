@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f257227facb029747856ae41ddc0d243, type: 3}
   m_Name: UltimateHand
   m_EditorClassIdentifier: 
-  attackForce: 0.25
-  usefulTime: 40
+  attackForce: 40
+  usefulTime: 0.25
   onWrongAttackSlower: 2
